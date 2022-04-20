@@ -10,4 +10,4 @@ Objectif : ensuite dans le logiciel Tableau, glisser la variable "type de bac" s
 
 Il a d'abord fallu créer un fichier csv où j'avais au préalable renommé les colonnes par un nom du type "Bac_general", "Bac_technologique", "Bac_professionnel" et "Bac_autres".
 
-Le melt fonctionne et crée bien une colonne "Type de bac". Incroyable mais vrai, les valeurs "bac_professionnel", "bac_technologique" etc. apparaissent telles quelles et ne sont pas remplacées par 1, 2, 3, 4. Ce qui m'arrive de façon assez déroutante quand je fais un melt sur plusieurs variable (si, par exemple, j'avais eu un type de bac et la distinction hommes / femmes à redispatcher en longueur). 
+Le melt fonctionne et crée bien une colonne "Type de bac". Incroyable mais vrai, les valeurs "bac_professionnel", "bac_technologique" etc. apparaissent telles quelles et ne sont pas remplacées par 1, 2, 3, 4. Ce qui m'arrive de façon assez déroutante quand je fais un melt sur plusieurs variables (si, par exemple, j'avais eu un type de bac et la distinction hommes / femmes à redispatcher en longueur). 
