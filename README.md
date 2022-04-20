@@ -2,8 +2,10 @@
 
 Passer de large en long avec la fonction "melt", appliqué aux BTS
 
-Il s'agit d'appliquer la fonction "melt" de data.table dans R, expliquée dans cette <a href="https://raw.githubusercontent.com/rstudio/cheatsheets/master/datatable.pdf">cheatsheet</a>, à un <a href="http://cache.media.enseignementsup-recherche.gouv.fr/file/statistiques/19/7/Qualification_Tableaux_campagne_2018_1143197.xlsx">jeu de données du MESRI </a> relatif au **taux de qualification aux fonctions de maître de conférences ou de professeur des universités entre 2008 et 2018** (onglet "historique MCF 2008-2018" du fichier excel). 
+Il s'agit d'appliquer la fonction "melt" de data.table dans R, expliquée dans cette <a href="https://raw.githubusercontent.com/rstudio/cheatsheets/master/datatable.pdf">cheatsheet</a>, à un <a href="https://data.enseignementsup-recherche.gouv.fr/explore/dataset/fr-esr-parcoursup/information/">jeu de données du MESRI </a> relatif à **Parcoursup 2021 - vœux de poursuite d'études et de réorientation dans l'enseignement supérieur et réponses des établissements. **
 
-Il a d'abord fallu créer un fichier csv où j'avais au préalable renommé les colonnes par un nom du type "MCexamines_2008", "MCexamines_2009" etc. jusqu'à 2018, et "MCqualifies_2008", "MCqualifies_2009" etc. jusqu'à 2018.
+Afin de concentrer les effectifs d'admis dans chaque type de bac, par spécialité de BTS, j'avais besoin de créer une variable "type de bac" pour ne garder qu'une variable "effectifs d'admis", ce qui permet ensuite dans le logiciel Tableau de glisser la variable "type de bac" sur la couleur pour créer un stacked bars chart, montrant la part de chaque type de bac parmi les admis dans chaque spécialité de BTS.
 
-Le melt fonctionne et crée bien une colonne "Année", néanmoins les années 2008,2009, 2010 sont remplacées par 1, 2, 3. Je n'ai pour l'instant pas automatisé cet aspect-là et remplacé à la main. 
+Il a d'abord fallu créer un fichier csv où j'avais au préalable renommé les colonnes par un nom du type "Bac_general", "Bac_technologique", "Bac_professionnel" et "Bac_autres".
+
+Le melt fonctionne et crée bien une colonne "Type de bac", et, incroyable mais vrai, les valeurs "bac_professionnel", "bac_technologique" apparaissent telles quelles et ne sont remplacées par 1, 2, 3,4. Ce qui m'arrive quand je fais un melt sur plusieurs variable (si, par exemple, j'avais eu un type de bac et la distinction hommes / femmes à redispatcher en longueur). 
